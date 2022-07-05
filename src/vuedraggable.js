@@ -302,7 +302,7 @@ const draggableComponent = {
     },
 
     getUnderlyingVm(htmlElt) {
-      const index = computeVmIndex(this.getChildrenNodes() || [], htmlElt)-1;
+      const index = computeVmIndex(this.getChildrenNodes() || [], htmlElt);
       if (index === -1) {
         //Edge case during move callback: related element might be
         //an element different from collection
