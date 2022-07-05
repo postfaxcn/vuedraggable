@@ -300,7 +300,6 @@ const draggableComponent = {
         );
       });
     },
-
     getUnderlyingVm(htmlElt) {
       const index = computeVmIndex(this.getChildrenNodes() || [], htmlElt);
       if (index === -1) {
