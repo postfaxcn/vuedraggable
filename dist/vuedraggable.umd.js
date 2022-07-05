@@ -3936,7 +3936,7 @@ var draggableComponent = {
       });
     },
     getUnderlyingVm: function getUnderlyingVm(htmlElt) {
-      var index = computeVmIndex(this.getChildrenNodes() || [], htmlElt) - 1;
+      var index = computeVmIndex(this.getChildrenNodes() || [], htmlElt);
 
       if (index === -1) {
         //Edge case during move callback: related element might be
