@@ -285,7 +285,9 @@ const draggableComponent = {
         return this.$children[0].$slots.default;
       }
       const rawNodes = this.$slots.default;
-      return this.transitionMode ? rawNodes[0].child.$slots.default : rawNodes;
+      let tmp = this.transitionMode ? rawNodes[0].child.$slots.default : rawNodes;
+
+      return Array.isArray(tmp) ? tmp.filter(x => x.tag !== undefined) : tmp;
     },
 
     computeIndexes() {

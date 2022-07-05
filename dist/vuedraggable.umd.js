@@ -3923,7 +3923,10 @@ var draggableComponent = {
       }
 
       var rawNodes = this.$slots.default;
-      return this.transitionMode ? rawNodes[0].child.$slots.default : rawNodes;
+      var tmp = this.transitionMode ? rawNodes[0].child.$slots.default : rawNodes;
+      return Array.isArray(tmp) ? tmp.filter(function (x) {
+        return x.tag !== undefined;
+      }) : tmp;
     },
     computeIndexes: function computeIndexes() {
       var _this4 = this;
